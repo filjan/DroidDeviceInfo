@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\6578d8c62900a7d49dc4bd82f7d341aeb09116f7\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\6578d8c62900a7d49dc4bd82f7d341aeb09116f7\\output\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\6578d8c62900a7d49dc4bd82f7d341aeb09116f7\\output\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\wallet_secondary_text_holo_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\5c2d759b655c6790b6446db247b7a9e64854519b\\output\\res\\color\\wallet_secondary_text_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\wallet_primary_text_holo_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\5c2d759b655c6790b6446db247b7a9e64854519b\\output\\res\\color\\wallet_primary_text_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Development\\Filjan\\Mobile\\Droid Info\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\tfile\\.android\\build-cache\\8dd08b5dc9ec96c895853757f782258588c9016d\\output\\res\\color\\abc_tint_btn_checkable.xml"
+    }
+]
