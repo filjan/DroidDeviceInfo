@@ -143,7 +143,7 @@ public class SensorUtil {
 		}
 	}
 
-	public static String getTemparatureSupport(SensorManager sm) {
+	public static String getTemperatureSupport(SensorManager sm) {
 		if (sm.getDefaultSensor(Sensor.TYPE_TEMPERATURE) != null) {
 			return "Supported";
 		} else {

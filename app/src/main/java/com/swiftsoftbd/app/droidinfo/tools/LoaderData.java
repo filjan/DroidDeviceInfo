@@ -13,6 +13,8 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 
 import com.swiftsoftbd.app.droidinfo.data.SharedPref;
 import com.swiftsoftbd.app.droidinfo.model.TheInfo;
@@ -26,6 +28,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 public class LoaderData {
@@ -77,7 +80,6 @@ public class LoaderData {
 		s=s+"Serial : " + Build.SERIAL +"\n";
         s=s+"Radio : " + Build.getRadioVersion()+"\n";
 
-		s=s+"Screen Resolution : " + getScreenResolution()+"\n";
 		s=s+"Total RAM : " + MemoryUtils.getTotalRam()+"\n";
 		s=s+"Available RAM : " + MemoryUtils.getAvailableRam(context)+"\n";
 		s=s+"Networks Type : "+ getNetworkType(context)+"\n";
@@ -109,14 +111,18 @@ public class LoaderData {
         context = applicationContext != null ? applicationContext : context;
 
 		String s="";
+		s = s+ "System Information : \n";// give separator
+		s = s+ "-:-\n";// give separator
 		s=s+"Android Version : " + Build.VERSION.RELEASE+"\n";
 		s=s+"API Level : " + Build.VERSION.SDK_INT+"\n";
         s=s+"Android ID : " + android.provider.Settings.Secure.getString(context.getContentResolver(), android.provider.Settings.Secure.ANDROID_ID) + "\n";
 		s=s+"Kernel Architecture : " + System.getProperty("os.arch")+"\n";
 		s=s+"Build ID : " + Build.DISPLAY+"\n";
-		s=s+"Runtime Value : "+getJavaVM()+"\n";
 		s=s+"Root Acces : "+new RootChecker().isDeviceRooted()+"\n";
         s=s+"Kernel : " + System.getProperty("os.version") +"\n";
+		s=s+"Java VM : " + getJavaRuntime() + "\n";
+		s=s+"Language : " + getLanguage() + "\n";
+		s=s+"Time Zone : " + getTimezone() + "\n";
 
         long seconds = SystemClock.elapsedRealtime() / 1000;
         long minutes = seconds / 60;
@@ -124,7 +130,13 @@ public class LoaderData {
         long days = hours / 24;
         String time = days + ":" + hours % 24 + ":" + minutes % 60 + ":" + seconds % 60;
 
-        s=s+"Time Since Reboot : " + days + " days, " + hours % 24 + " hours, " + minutes % 60 + " minutes, " + seconds % 60 + " seconds\n";
+        s=s+"Time Since Reboot : " + days + " days, " + hours % 24 + " hours, " + minutes % 60 + " minutes, " + seconds % 60 + " seconds\n\n";
+
+		s = s+ "Screen Information : \n";// give separator
+		s = s+ "-:-\n";// give separator
+		s=s+"Density : " + getScreenDensity() +"\n";
+		s=s+"Screen Resolution : " + getScreenResolution()+"\n";
+		s=s+"Refresh Rate : " + getDisplayRefresh() + " Hz" + "\n";
 		SharedPref.setSystemData(context, s);
 	}
 
@@ -193,12 +205,35 @@ public class LoaderData {
 		s=s+"Proximity : "+SensorUtil.getProximitySupport(pm)+"\n";
 		s=s+"NFC : "+SensorUtil.getNFCSupport(pm)+"\n";
 		s=s+"Rotation Vector : "+SensorUtil.getRotationVectorSupport(mSensorManager)+"\n";
-		s=s+"Temparature : "+SensorUtil.getTemparatureSupport(mSensorManager)+"\n";
+		s=s+"Temperature : "+SensorUtil.getTemperatureSupport(mSensorManager)+"\n";
 		s=s+"Gravity : "+SensorUtil.getGravitySupport(mSensorManager)+"\n";
 		SharedPref.setSensorData(context, s);
 	}
 	
-	
+	public void loadWifiInfo()
+	{
+		String s = "";
+
+		s = s+ "Wifi Information : \n";// give separator
+		s = s+ "-:-\n";// give separator
+		s = s+"Enabled : " + WifiData.IsEnabled(context) + "\n";
+		s = s+"Data State : test\n";
+		s = s+"Handshake State : test\n";
+		s = s+"SSID : " + WifiData.GetSSID(context) + "\n";
+		s = s+"BSSID : " + WifiData.GetBSSID(context) + "\n";
+		s = s+"Vendor : test\n";
+		s = s+"Channel : test\n";
+		s = s+"IP Address : " + WifiData.GetIPAddress(context) + "\n";
+		s = s+"Subnet Mask : test\n";
+		s = s+"IPv6 Addresses : " + WifiData.GetIPv6(context) + "\n";
+		s = s+"MAC : " + WifiData.GetMacAddress(context) + "\n";
+		s = s+"Speed : " + WifiData.GetWifiSpeed(context) + "\n";
+		s = s+"Signal Strength : " + WifiData.GetSignalStrength(context) + "\n";
+		s = s+"Received Since Reboot : " + WifiData.GetReceivedSinceReboot() + "\n";
+		s = s+"Sent Since Reboot : " + WifiData.GetSentSinceReboot() + "\n";
+
+		SharedPref.setWifiData(context, s);
+	}
 	
 	public static ArrayList<TheInfo> getArrList(String string){
 		ArrayList<TheInfo> infos = new ArrayList<TheInfo>();
@@ -229,6 +264,7 @@ public class LoaderData {
 		activity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
 		int height = displaymetrics.heightPixels;
 		int width = displaymetrics.widthPixels;
+
 		return width+" x "+height+" pixels";
 	}
 	
@@ -431,4 +467,111 @@ public class LoaderData {
 		return maxFreq;
 	}
 
+    private String getScreenDensity() {
+        String densityValue = "";
+
+		try {
+			final DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+
+			//((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(dm);
+			int dpiClassification = displayMetrics.densityDpi;
+
+			if (dpiClassification <= DisplayMetrics.DENSITY_LOW) {
+				densityValue = "(ldpi) " + String.valueOf(dpiClassification);
+			}
+			else if (dpiClassification > DisplayMetrics.DENSITY_LOW  && dpiClassification <= DisplayMetrics.DENSITY_MEDIUM) {
+				densityValue = "(mdpi) " + String.valueOf(dpiClassification);
+			}
+			else if (dpiClassification > DisplayMetrics.DENSITY_MEDIUM && dpiClassification <= DisplayMetrics.DENSITY_HIGH) {
+				densityValue = "(hdpi) " + String.valueOf(dpiClassification);
+			}
+			else if (dpiClassification > DisplayMetrics.DENSITY_HIGH && dpiClassification <= DisplayMetrics.DENSITY_XHIGH) {
+				densityValue = "(xhdpi) " + String.valueOf(dpiClassification);
+			}
+			else if (dpiClassification > DisplayMetrics.DENSITY_XHIGH && dpiClassification <= DisplayMetrics.DENSITY_XXHIGH) {
+				densityValue = "(xxhdpi) " + String.valueOf(dpiClassification);
+			}
+			else if (dpiClassification > DisplayMetrics.DENSITY_XXHIGH && dpiClassification <= DisplayMetrics.DENSITY_XXXHIGH) {
+				densityValue = "(xxxhdpi) " + String.valueOf(dpiClassification);
+			}
+			else
+			{
+				densityValue = "";
+			}
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+
+        return densityValue;
+    }
+
+    public String getDisplayRefresh()
+	{
+		String refreshRate = "";
+
+		try {
+			final WindowManager wm = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
+			final Display display = wm.getDefaultDisplay();
+			refreshRate = String.format("%.1f",display.getRefreshRate());
+
+
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+		return refreshRate;
+	}
+
+	public String getJavaRuntime()
+	{
+		String runtimeType = "";
+
+		try {
+			runtimeType = System.getProperty("java.vm.version");
+
+			runtimeType = getJavaVM() + " " + runtimeType;
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+
+		return runtimeType;
+	}
+
+	public String getTimezone()
+	{
+		String timeZone = "";
+
+		try {
+			TimeZone tz = TimeZone.getDefault();
+			timeZone = tz.getDisplayName(false, TimeZone.LONG);
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+		return timeZone;
+	}
+
+	public String getLanguage()
+	{
+		String displayLanguage = "";
+
+		try {
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+				displayLanguage = context.getResources().getConfiguration().getLocales().get(0).getDisplayLanguage();
+			} else {
+				displayLanguage = context.getResources().getConfiguration().locale.getDisplayLanguage();
+			}
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+		return displayLanguage;
+	}
 }

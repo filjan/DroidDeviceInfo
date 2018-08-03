@@ -9,7 +9,7 @@
 
 
     <string name="app_name">Droid Device Info</string>
-    <string name="app_version">Version: 2.1.2</string>
+    <string name="app_version">Version: 2.1.3</string>
     <string name="dummy_section_text">Section %1d is just a dummy section.</string>
     <string name="demo_external_activity">Demo External Activity</string>
     <string name="demo_collection">Demo Collection</string>
@@ -27,6 +27,7 @@
         <item>SYSTEM</item>
 <!--        <item>CAMERA</item> -->
         <item>BATTERY</item>
+        <item>WIFI</item>
         <item>SENSOR</item>
         <item>ABOUT</item>
     </string-array>

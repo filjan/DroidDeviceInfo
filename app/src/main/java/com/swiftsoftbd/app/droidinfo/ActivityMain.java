@@ -168,6 +168,7 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
 		     	cpu.loadDeviceInfo();
 		     	cpu.loadSystemInfo();
 		     	cpu.loadSupportInfo();
+		     	cpu.loadWifiInfo();
 		     	status="succced";
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -201,5 +202,6 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
 			mInterstitialAd.show();
 		}
 	}
-    
+
+
 }

@@ -69,13 +69,31 @@ public class SharedPref {
 	public static String getSensorData(Context ctx){
 		return getStringPref("support_", "", ctx);
 	}
-	
+
+	/*
+		* Wifi
+	 */
+	public static void setWifiData(Context ctx, String s){
+		setStringPref("wifi_",s,ctx);
+	}
+
+	public static String getWifiData(Context ctx){
+		return getStringPref("wifi_", "", ctx);
+	}
 	/**
 	 * Universal shared preference
 	 * for string
 	 */
 	public static String getStringPref(String key_val, String def_val, Context context) {
+		String stringValue;
 		SharedPreferences pref = context.getSharedPreferences("pref_"+key_val,context.MODE_PRIVATE);
+
+		stringValue = pref.getString(key_val, def_val);
+
+		if (stringValue == null)
+		{
+			stringValue = "";
+		}
 		return pref.getString(key_val, def_val);
 	}
 	

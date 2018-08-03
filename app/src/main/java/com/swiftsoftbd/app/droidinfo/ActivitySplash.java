@@ -58,7 +58,11 @@ public class ActivitySplash extends Activity {
 		     	publishProgress("load system info");
 		     	Thread.sleep(300);
 		     	cpu.loadSystemInfo();
-		     	
+
+				publishProgress("load wifi info");
+				Thread.sleep(300);
+				cpu.loadWifiInfo();
+
 		     	publishProgress("load sensor info");
 		     	Thread.sleep(300);
 		     	cpu.loadSupportInfo();

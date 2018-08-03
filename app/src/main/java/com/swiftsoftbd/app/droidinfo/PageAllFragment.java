@@ -78,13 +78,18 @@ public class PageAllFragment extends Fragment {
 //			listView1.setAdapter(new ItemListBaseAdapter(getActivity(), R.layout.item_listview,LoaderData.getArrList(s)));
 			break;
 			
-		case 4: //batery
+		case 4: //battery
 			//text.setText(SharedPref.getBateryData(getActivity()));
 			s =SharedPref.getBateryData(getActivity());
 			listView1.setAdapter(new ItemListBaseAdapter(getActivity(), R.layout.item_listview,LoaderData.getArrList(s)));
 			break;
 			
-		case 5: //Sensor
+		case 5: //Wifi
+			//text.setText(SharedPref.getSensorData(getActivity()));
+//			s =SharedPref.getWifiData(getActivity());
+//			listView1.setAdapter(new ItemListBaseAdapter(getActivity(), R.layout.item_listview,LoaderData.getArrList(s)));
+			break;
+		case 6: //Sensor
 			//text.setText(SharedPref.getSensorData(getActivity()));
 			s =SharedPref.getSensorData(getActivity());
 			listView1.setAdapter(new ItemListBaseAdapter(getActivity(), R.layout.item_listview,LoaderData.getArrList(s)));

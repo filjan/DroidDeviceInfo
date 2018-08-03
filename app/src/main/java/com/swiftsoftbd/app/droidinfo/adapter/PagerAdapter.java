@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.swiftsoftbd.app.droidinfo.PageAbout;
 import com.swiftsoftbd.app.droidinfo.PageAllFragment;
+import com.swiftsoftbd.app.droidinfo.PageWifi;
 
 /**
  * A {@link FragmentPagerAdapter} that returns a fragment corresponding to one of the primary
@@ -27,10 +28,13 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-    	if(i==(count - 1)){
-    		// The first section of the app is the most interesting -- it offers
+    	if(i==(count - 1)) {
+            // The first section of the app is the most interesting -- it offers
             // a launchpad into the other demonstrations in this swiftsoftbd application.
             return new PageAbout();
+        }
+        else if (i == 4) {
+    	    return new PageWifi();
     	}else{
     		 // The other sections of the app are dummy placeholders.
             Fragment fragment = new PageAllFragment();
