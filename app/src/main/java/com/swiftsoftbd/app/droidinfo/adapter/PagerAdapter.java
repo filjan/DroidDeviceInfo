@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.swiftsoftbd.app.droidinfo.PageAbout;
 import com.swiftsoftbd.app.droidinfo.PageAllFragment;
 import com.swiftsoftbd.app.droidinfo.PageWifi;
+import com.swiftsoftbd.app.droidinfo.PageDevice;
 
 /**
  * A {@link FragmentPagerAdapter} that returns a fragment corresponding to one of the primary
@@ -32,6 +33,9 @@ public class PagerAdapter extends FragmentPagerAdapter {
             // The first section of the app is the most interesting -- it offers
             // a launchpad into the other demonstrations in this swiftsoftbd application.
             return new PageAbout();
+        }
+        else if (i == 2) {
+    	    return new PageDevice();
         }
         else if (i == 4) {
     	    return new PageWifi();

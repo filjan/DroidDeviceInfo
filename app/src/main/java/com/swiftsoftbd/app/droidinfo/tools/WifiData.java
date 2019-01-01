@@ -1,5 +1,6 @@
 package com.swiftsoftbd.app.droidinfo.tools;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -319,19 +320,18 @@ public class WifiData {
     {
         final WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 
+        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+        //int frequency = wifiInfo.getFrequency();
         int frequency = 0;
-
-        //wifiManager.startScan();
-
-        Collection<ScanResult> scanResults = wifiManager.getScanResults();
-        if (scanResults == null) {
-            return "";
-        }
-
-        for (ScanResult scanResult : scanResults) {
-            frequency = scanResult.frequency;
-        }
-
         return Integer.toString(frequency);
     }
+    //@Override
+    //public void onRequestPermissionsResult(int requestCode, String[] permissions,
+    //                                       int[] grantResults) {
+    //    if (requestCode == PERMISSIONS_REQUEST_CODE_ACCESS_COARSE_LOCATION
+    //            && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+    //        // Do something with granted permission
+    //        mWifiListener.getScanningResults();
+     //   }
+    //}
 }
