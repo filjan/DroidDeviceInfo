@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+        <TableRow android:background="@color/soft_grey2">
+            <TextView
+                android:layout_column="1"
+                android:text="Model:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtModel"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:layout_column="1"
+                android:text="Manufacturer:"
+                android:padding="3dip" />
+            <TextView
+                android:text="Ctrl-S"
+                android:gravity="right"
+                android:id="@+id/txtManufacturer"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey2">
+            <TextView
+                android:layout_column="1"
+                android:text="Board:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtBootloader"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:layout_column="1"
+                android:text="Serial:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtSerial"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey2">
+            <TextView
+                android:layout_column="1"
+                android:text="Radio:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtRadio"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:layout_column="1"
+                android:text="Total Ram:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtTotalRam"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey">
+            <TextView
+                android:layout_column="1"
+                android:text="Available RAM:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtAvailableRAM"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/white">
+            <TextView
+                android:layout_column="1"
+                android:text="Network Type:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtNetworkType"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey">
+            <TextView
+                android:layout_column="1"
+                android:text="Phone Type:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtPhoneType"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_weight="1"
+                android:background="#FF909090"
+                android:padding="2dip" />
+        </TableRow>
+        <TableRow android:background="@color/white">
+            <TextView
+                android:layout_column="1"
+                android:textStyle="bold"
+                android:text="Internal Storage"
+                android:padding="3dip" />
+
+        </TableRow>
+        <TableRow android:background="@color/soft_grey">
+            <TextView
+                android:layout_column="1"
+                android:text="Total:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtTotalStorage"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/white">
+            <TextView
+                android:layout_column="1"
+                android:text="Usage:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:gravity="right"
+                android:id="@+id/txtStorageUsage"
+                android:padding="3dip" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +43,7 @@ public class PageWifi extends Fragment {
         txtChannel.setText("test");
 
         TextView txtFrequency = (TextView) rootView.findViewById(R.id.txtFrequency);
-        txtChannel.setText(WifiData.GetFrequency(context));
+        txtFrequency.setText(WifiData.GetFrequency(context));
 
         TextView txtIPAddress = (TextView) rootView.findViewById(R.id.txtIPAddress);
         txtIPAddress.setText(WifiData.GetIPAddress(context));
