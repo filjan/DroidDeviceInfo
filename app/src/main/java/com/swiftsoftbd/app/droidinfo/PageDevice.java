@@ -20,34 +20,43 @@ public class PageDevice extends Fragment {
         txtModel.setText(device.GetModel());
 
         TextView txtManufacturer = (TextView) rootView.findViewById(R.id.txtManufacturer);
-        txtManufacturer.setText("");
+        txtManufacturer.setText(device.GetManufacturer());
 
         TextView txtBootloader = (TextView) rootView.findViewById(R.id.txtBootloader);
-        txtBootloader.setText("");
+        txtBootloader.setText(device.GetBootLoader());
 
         TextView txtSerial = (TextView) rootView.findViewById(R.id.txtSerial);
-        txtSerial.setText("");
+        txtSerial.setText(device.GetSerial());
 
         TextView txtRadio = (TextView) rootView.findViewById(R.id.txtRadio);
-        txtRadio.setText("");
+        txtRadio.setText(device.GetRadio());
+
+        TextView txtAccelerometer = (TextView) rootView.findViewById(R.id.txtAccelerometer);
+        txtAccelerometer.setText(device.GetAccelerometerName(context));
+
+        TextView txtGyroscope = (TextView) rootView.findViewById(R.id.txtGyroscope);
+        txtGyroscope.setText(device.GetGyroscopeName(context));
+
+        TextView txtMagnetometer = (TextView) rootView.findViewById(R.id.txtMagnetometer);
+        txtMagnetometer.setText(device.GetMagnetometerName(context));
 
         TextView txtTotalRam = (TextView) rootView.findViewById(R.id.txtTotalRam);
-        txtTotalRam.setText("");
+        txtTotalRam.setText(device.GetTotalRAM());
 
         TextView txtAvailableRAM = (TextView) rootView.findViewById(R.id.txtAvailableRAM);
-        txtAvailableRAM.setText("");
+        txtAvailableRAM.setText(device.GetAvailableRAM(context));
 
         TextView txtNetworkType = (TextView) rootView.findViewById(R.id.txtNetworkType);
-        txtNetworkType.setText("");
+        txtNetworkType.setText(device.GetNetworkType(context));
 
         TextView txtPhoneType = (TextView) rootView.findViewById(R.id.txtPhoneType);
-        txtPhoneType.setText("");
+        txtPhoneType.setText(device.GetPhoneType(context));
 
         TextView txtTotalStorage = (TextView) rootView.findViewById(R.id.txtTotalStorage);
-        txtTotalStorage.setText("");
+        txtTotalStorage.setText(device.GetTotalStorage(context));
 
         TextView txtStorageUsage = (TextView) rootView.findViewById(R.id.txtStorageUsage);
-        txtStorageUsage.setText("");
+        txtStorageUsage.setText(device.GetUsageStorage(context));
 
         return rootView;
     }

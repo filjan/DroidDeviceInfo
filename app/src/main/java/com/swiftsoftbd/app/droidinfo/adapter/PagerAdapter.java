@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.swiftsoftbd.app.droidinfo.PageAbout;
 import com.swiftsoftbd.app.droidinfo.PageAllFragment;
+import com.swiftsoftbd.app.droidinfo.PageCPU;
 import com.swiftsoftbd.app.droidinfo.PageWifi;
 import com.swiftsoftbd.app.droidinfo.PageDevice;
 
@@ -34,7 +35,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
             // a launchpad into the other demonstrations in this swiftsoftbd application.
             return new PageAbout();
         }
-        else if (i == 2) {
+        else if (i == 0) {
+    	    return new PageCPU();
+        }
+        else if (i == 1) {
     	    return new PageDevice();
         }
         else if (i == 4) {

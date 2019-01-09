@@ -18,7 +18,7 @@
     <color name="darker_grey">#4B4B4D</color>
     <!-- other color -->
     <color name="soft_grey">#EBEBEB</color>
-    <color name="soft_grey2">#DBDBDB</color>
+    <color name="soft_grey2">#FAFAFA</color>
     
  	<!-- Drawer menu color -->
     <color name="list_item_title">#fff</color>
