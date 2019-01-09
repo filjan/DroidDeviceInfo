@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cpu"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/white">
     <TableLayout
+        android:id="@+id/table_cpu"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="1">
-        <TableRow android:background="@color/soft_grey2">
+        android:layout_height="match_parent"
+        android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Architecture:"
                 android:padding="3dip" />
             <TextView
                 android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
                 android:gravity="right"
                 android:id="@+id/txtArchitecture"
                 android:padding="3dip" />
@@ -25,6 +32,9 @@
                 android:padding="3dip" />
             <TextView
                 android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
                 android:gravity="right"
                 android:id="@+id/txtCPUCores"
                 android:padding="3dip" />
@@ -36,151 +46,42 @@
                 android:padding="3dip" />
             <TextView
                 android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
                 android:gravity="right"
                 android:id="@+id/txtFrequencies"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@android:color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="CPU Core:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtCPUCoreCount"
-                android:padding="3dip" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_weight="1"
+                android:background="#FF909090"
+                android:padding="2dip" />
         </TableRow>
-        <TableRow android:background="@color/soft_grey2">
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
-                android:text="BSSID:"
+                android:textStyle="bold"
+                android:text="Processor Information"
                 android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtBSSID"
-                android:padding="3dip" />
+
         </TableRow>
-        <TableRow android:background="@android:color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Vendor:"
-                android:padding="3dip" />
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:text=""
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
                 android:gravity="right"
-                android:id="@+id/txtVendor"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey">
-            <TextView
-                android:layout_column="1"
-                android:text="Frequency:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtFrequency"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Channel:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtChannel"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey">
-            <TextView
-                android:layout_column="1"
-                android:text="IP Address:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtIPAddress"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Subnet Mask:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtSubnetMask"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey">
-            <TextView
-                android:layout_column="1"
-                android:text="IPv6 Address:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtIPv6Address"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="MAC:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtMAC"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey">
-            <TextView
-                android:layout_column="1"
-                android:text="Speed:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtSpeed"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Signal Strength:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtSignalStrength"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey">
-            <TextView
-                android:layout_column="1"
-                android:text="Received Since Reboot:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtReceivedSinceReboot"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Sent Since Reboot:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:gravity="right"
-                android:id="@+id/txtSentSinceReboot"
+                android:id="@+id/txtProcessorInfo"
                 android:padding="3dip" />
         </TableRow>
     </TableLayout>
