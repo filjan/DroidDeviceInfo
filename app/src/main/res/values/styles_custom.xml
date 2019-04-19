@@ -11,6 +11,7 @@
 		 <item name="android:actionBarDivider">@color/main_color</item> 
 		<item name="android:actionBarTabStyle">@style/AppTheme.ActionBar.ActionBarTabStyle</item>
 		<item name="android:actionBarTabTextStyle">@style/AppTheme.ActionBar.TabTitleTextStyle</item>
+        <item name="android:textSize">16sp</item>
     </style>
     
     

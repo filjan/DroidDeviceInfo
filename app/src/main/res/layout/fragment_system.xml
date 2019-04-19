@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollSystem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+        <TableLayout
+            android:id="@+id/table_system"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:layout_marginRight="5dp"
+            android:background="@color/soft_grey">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Android Version:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtAndroidVersion"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@android:color/white">
+                <TextView
+                    android:layout_column="1"
+                    android:text="API Level:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtAPILevel"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Android ID:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtAndroidID"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/white"
+                android:layout_marginBottom="1dp">
+                <TextView
+                    android:layout_column="1"
+                    android:textStyle="bold"
+                    android:text="Kernel Architecture"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtKernelArchitecture"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Build ID:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtBuildID"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Root Access:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtRootAccess"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Kernel:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtKernel"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Java VM:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtJavaVM"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Language:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtLanguage"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Time Zone:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtTimeZone"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Time Since Reboot:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtSinceReboot"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Density:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtDensity"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Screen Resolution:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtScreenResolution"
+                    android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/soft_grey2">
+                <TextView
+                    android:layout_column="1"
+                    android:text="Refresh Rate:"
+                    android:padding="3dip" />
+                <TextView
+                    android:text=""
+                    android:layout_column="2"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:id="@+id/txtRefreshRate"
+                    android:padding="3dip" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>

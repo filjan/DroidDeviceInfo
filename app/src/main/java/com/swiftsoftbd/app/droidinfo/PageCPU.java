@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -22,13 +23,16 @@ public class PageCPU extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_cpu, container, false);
         Context context = getActivity().getApplicationContext();
 
-        LinearLayout linearLayout = rootView.findViewById(R.id.layout_cpu);
+        ScrollView scrollView = rootView.findViewById(R.id.scrollCPU);
 
-        TableLayout tableLayout = linearLayout.findViewById(R.id.table_cpu);
+        TableLayout tableLayout = scrollView.findViewById(R.id.table_cpu);
 
          CPUData cpu = new CPUData();
 
          cpu.GetProcessorInfo();
+
+        TextView txtProcessorName = (TextView) rootView.findViewById(R.id.txtProcessorName);
+        txtProcessorName.setText(cpu.GetProcessorName(context));
 
         TextView txtArchitecture = (TextView) rootView.findViewById(R.id.txtArchitecture);
         txtArchitecture.setText(cpu.GetArchitecture());
@@ -37,7 +41,10 @@ public class PageCPU extends Fragment {
         txtCPUCores.setText(cpu.GetCPUCores()+" cores");
 
         TextView txtFrequencies = (TextView) rootView.findViewById(R.id.txtFrequencies);
-        txtFrequencies.setText(cpu.getCPUFreqMHz("Min") + " MHz - " + cpu.getCPUFreqMHz("Max") +" MHz");
+        txtFrequencies.setText(cpu.getCPUFreqMHz());
+
+        TextView txtGovernor = (TextView) rootView.findViewById(R.id.txtGovernor);
+        txtGovernor.setText(cpu.GetGovernor());
 
         //TextView txtProcessorInfo = (TextView) rootView.findViewById(R.id.txtProcessorInfo);
         //txtProcessorInfo.setText(cpu.GetProcessorInfo());

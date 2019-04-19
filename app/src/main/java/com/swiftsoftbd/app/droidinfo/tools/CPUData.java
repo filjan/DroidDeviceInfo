@@ -1,14 +1,20 @@
 package com.swiftsoftbd.app.droidinfo.tools;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class CPUData {
@@ -28,57 +34,24 @@ public class CPUData {
     }
 
     public String GetCPUCores() {
-        return (new File("/sys/devices/system/cpu/"))
-                .listFiles(new FileFilter() {
-                    @Override
-                    public boolean accept(File f) {
-                        return Pattern.matches("cpu[0-9]+", f.getName());
-                    }
-                }).length + "";
-    }
-
-    public int getCPUFreqMHz(String typeFreq) {
-
-        int maxFreq = -1;
-        try {
-
-            java.io.RandomAccessFile reader = null;
-            if (typeFreq == "Max") {
-                reader = new java.io.RandomAccessFile("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq", "r");
-            } else if (typeFreq == "Min") {
-                reader = new java.io.RandomAccessFile("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq", "r");
-            }
-            //RandomAccessFile reader = new RandomAccessFile( "/sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state", "r" );
-
-            boolean done = false;
-            while (!done) {
-                String line = reader.readLine();
-                if (null == line) {
-                    done = true;
-                    break;
-                }
-                String[] splits = line.split("\\s+");
-                assert (splits.length == 2);
-                int timeInState = 0;
-                if (splits.length == 2) {
-                    timeInState = Integer.parseInt(splits[1]);
-                } else {
-                    timeInState = Integer.parseInt(splits[0]);
-                }
-                //int timeInState = Integer.parseInt( splits[1] );
-                if (timeInState > 0) {
-                    int freq = Integer.parseInt(splits[0]) / 1000;
-                    if (freq > maxFreq) {
-                        maxFreq = freq;
-                    }
-                }
-            }
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        String returnValue = "";
+        if (processorMap.containsKey("cpu cores"))
+        {
+            returnValue = processorMap.get("cpu cores");
         }
 
-        return maxFreq;
+        return returnValue;    }
+
+    public String getCPUFreqMHz() {
+
+        String returnValue = "";
+        if (processorMap.containsKey("cpu MHz"))
+        {
+            //returnValue = processorMap.get("cpu MHz");
+            returnValue = String.format("%.02f Mhz", Double.parseDouble(processorMap.get("cpu MHz"))/1000f);
+        }
+
+        return returnValue;
     }
 
     public void GetProcessorInfo() {
@@ -103,5 +76,48 @@ public class CPUData {
             }
         }
         //return sb.toString();
+    }
+
+
+    public String GetProcessorName(Context context)
+    {
+        String returnValue = "";
+        if (processorMap.containsKey("model name"))
+        {
+            returnValue = processorMap.get("model name");
+        }
+
+        return returnValue;
+    }
+
+    public String GetGovernor() {
+        StringBuffer sb = new StringBuffer();
+
+        //String file = "/proc/cpuinfo";  // Gets most cpu info (but not the governor)
+        String file = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";  // Gets governor
+
+        java.io.RandomAccessFile reader = null;
+        try {
+            reader = new java.io.RandomAccessFile("/sys/bus/cpu/devices/cpu0/cpufreq/cpuinfo_cur_freq", "r");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        if (new File(file).exists()) {
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(new File(file)));
+                String aLine;
+                while ((aLine = br.readLine()) != null)
+                    sb.append(aLine + "\n");
+
+                if (br != null)
+                    br.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return sb.toString();
     }
 }

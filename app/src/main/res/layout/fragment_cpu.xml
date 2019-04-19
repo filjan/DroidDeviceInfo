@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_cpu"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollCPU"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
     <TableLayout
         android:id="@+id/table_cpu"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:layout_marginRight="5dp"
         android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Processor Name:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtProcessorName"
+                android:padding="3dip" />
+        </TableRow>
         <TableRow android:background="@color/soft_grey2"
             android:layout_marginBottom="1dp">
             <TextView
@@ -42,7 +58,7 @@
         <TableRow android:background="@color/soft_grey2">
             <TextView
                 android:layout_column="1"
-                android:text="Frequencies:"
+                android:text="Frequency:"
                 android:padding="3dip" />
             <TextView
                 android:text=""
@@ -51,6 +67,20 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:id="@+id/txtFrequencies"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:layout_column="1"
+                android:text="Governor:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtGovernor"
                 android:padding="3dip" />
         </TableRow>
         <TableRow
@@ -85,4 +115,4 @@
                 android:padding="3dip" />
         </TableRow>
     </TableLayout>
-</LinearLayout>
+    </ScrollView>
