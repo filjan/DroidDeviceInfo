@@ -393,6 +393,7 @@ public class LoaderData {
 			case TelephonyManager.NETWORK_TYPE_NR:
 				break;
 		}
+		return "Unavailable";
 	}
 
 	public String getPhoneType(Context context) {

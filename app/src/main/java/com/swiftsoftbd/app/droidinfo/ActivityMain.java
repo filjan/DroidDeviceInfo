@@ -48,7 +48,6 @@ import static android.Manifest.permission.CAMERA;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
-import com.microsoft.appcenter.distribute.Distribute;
 
 public class ActivityMain extends FragmentActivity implements ActionBar.TabListener {
 
@@ -68,7 +67,7 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_main);
 
-        AppCenter.start(getApplication(), "47387cec-c3b9-400e-a6b3-8494aff416a8",
+        AppCenter.start(getApplication(), "de879b16-07e9-4032-8789-a8c6231e4032",
                 Analytics.class, Crashes.class);
 
         // Create the InterstitialAd and set the adUnitId.
