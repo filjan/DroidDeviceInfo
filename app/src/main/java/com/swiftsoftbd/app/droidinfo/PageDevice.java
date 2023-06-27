@@ -2,7 +2,7 @@ package com.swiftsoftbd.app.droidinfo;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +22,11 @@ public class PageDevice extends Fragment {
         TextView txtManufacturer = (TextView) rootView.findViewById(R.id.txtManufacturer);
         txtManufacturer.setText(device.GetManufacturer());
 
-        TextView txtBootloader = (TextView) rootView.findViewById(R.id.txtBootloader);
-        txtBootloader.setText(device.GetBootLoader());
+        TextView txtBoard = (TextView) rootView.findViewById(R.id.txtBoard);
+        txtBoard.setText(device.GetBoard());
 
-        TextView txtSerial = (TextView) rootView.findViewById(R.id.txtSerial);
-        txtSerial.setText(device.GetSerial());
+        //TextView txtSerial = (TextView) rootView.findViewById(R.id.txtSerial);
+        //txtSerial.setText(device.GetSerial());
 
         TextView txtRadio = (TextView) rootView.findViewById(R.id.txtRadio);
         txtRadio.setText(device.GetRadio());

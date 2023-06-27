@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollBattery"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <TableLayout
+        android:id="@+id/table_battery"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:layout_marginRight="5dp"
+        android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Battery Level:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtBatteryLevel"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@android:color/white"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Technology:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:id="@+id/txtBatteryTechnology"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Plugged:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtBatteryPlugged"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@android:color/white"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Health:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtBatteryHealth"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Status:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtBatteryStatus"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Voltage:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtBatteryVoltage"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Temperature:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtBatteryTemperature"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/white"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_column="1"
+                android:text=""
+                android:padding="3dip"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+</ScrollView>

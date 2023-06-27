@@ -51,22 +51,7 @@
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:id="@+id/txtBootloader"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@android:color/white"
-            android:layout_marginBottom="1dp">
-            <TextView
-                android:layout_column="1"
-                android:text="Serial:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:layout_column="2"
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:id="@+id/txtSerial"
+                android:id="@+id/txtBoard"
                 android:padding="3dip" />
         </TableRow>
         <TableRow android:background="@color/soft_grey2"

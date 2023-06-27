@@ -2,7 +2,7 @@
 
     <!-- On pressed -->
     <item android:state_focused="false" android:state_pressed="true">
-        <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <layer-list>
             <item android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="5dp">
                 <shape android:shape="rectangle">
                     <stroke android:width="1dp" android:color="@color/main_color" />
@@ -14,7 +14,7 @@
 
     <!-- on unpressed -->
     <item>
-        <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <layer-list>
             <item android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="5dp">
                 <shape android:shape="rectangle">
                     <stroke android:width="1dp" android:color="@color/main_color" />

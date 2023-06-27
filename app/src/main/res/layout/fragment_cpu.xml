@@ -10,12 +10,12 @@
         android:layout_height="match_parent"
         android:isScrollContainer="true"
         android:layout_marginRight="5dp"
-        android:background="@color/soft_grey">
+        android:background="@color/soft_grey2">
         <TableRow android:background="@color/soft_grey2"
             android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
-                android:text="Processor Name:"
+                android:text="Processor Mfg:"
                 android:padding="3dip" />
             <TextView
                 android:text=""
@@ -23,7 +23,22 @@
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:id="@+id/txtProcessorName"
+                android:id="@+id/txtProcessorMfg"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
+            <TextView
+                android:layout_column="1"
+                android:text="Processor Model:"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:layout_column="2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/txtProcessorModel"
                 android:padding="3dip" />
         </TableRow>
         <TableRow android:background="@color/soft_grey2"
@@ -98,21 +113,21 @@
         <TableRow android:background="@color/white"
             android:layout_marginBottom="1dp">
             <TextView
-                android:layout_column="1"
-                android:textStyle="bold"
-                android:text="Processor Information"
-                android:padding="3dip" />
-
-        </TableRow>
-        <TableRow android:background="@color/white"
-            android:layout_marginBottom="1dp">
-            <TextView
                 android:text=""
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:id="@+id/txtProcessorInfo"
                 android:padding="3dip" />
+        </TableRow>
+        <TableRow android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_column="1"
+                android:textStyle="bold"
+                android:text="Processor Information"
+                android:padding="1dip" />
         </TableRow>
     </TableLayout>
     </ScrollView>

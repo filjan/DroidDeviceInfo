@@ -3,7 +3,7 @@
   
   <!-- SELECTED TAB STATE -->
   <item android:state_selected="true" android:state_pressed="false">
-      <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <layer-list>
            <!-- Bottom indicator color for the UNSELECTED tab state -->
         <item >
              <shape android:shape="rectangle">
@@ -21,7 +21,7 @@
   
   <!-- UNSELECTED TAB STATE -->
   <item android:state_selected="false" android:state_pressed="false">
-    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <layer-list>
        <item>
            <shape>
               <solid android:color="@android:color/transparent"/>

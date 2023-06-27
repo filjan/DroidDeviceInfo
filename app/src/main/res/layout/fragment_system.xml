@@ -26,7 +26,8 @@
                     android:id="@+id/txtAndroidVersion"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@android:color/white">
+            <TableRow android:background="@android:color/white"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="API Level:"
@@ -40,7 +41,8 @@
                     android:id="@+id/txtAPILevel"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Android ID:"
@@ -70,7 +72,8 @@
                     android:id="@+id/txtKernelArchitecture"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Build ID:"
@@ -84,7 +87,8 @@
                     android:id="@+id/txtBuildID"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/white"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Root Access:"
@@ -98,7 +102,8 @@
                     android:id="@+id/txtRootAccess"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Kernel:"
@@ -112,7 +117,8 @@
                     android:id="@+id/txtKernel"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/white"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Java VM:"
@@ -126,7 +132,8 @@
                     android:id="@+id/txtJavaVM"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Language:"
@@ -140,7 +147,8 @@
                     android:id="@+id/txtLanguage"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/white"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Time Zone:"
@@ -154,7 +162,8 @@
                     android:id="@+id/txtTimeZone"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Time Since Reboot:"
@@ -168,7 +177,8 @@
                     android:id="@+id/txtSinceReboot"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/white"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Density:"
@@ -182,7 +192,8 @@
                     android:id="@+id/txtDensity"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/soft_grey2"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Screen Resolution:"
@@ -196,7 +207,8 @@
                     android:id="@+id/txtScreenResolution"
                     android:padding="3dip" />
             </TableRow>
-            <TableRow android:background="@color/soft_grey2">
+            <TableRow android:background="@color/white"
+                android:layout_marginBottom="1dp">
                 <TextView
                     android:layout_column="1"
                     android:text="Refresh Rate:"
@@ -209,6 +221,16 @@
                     android:gravity="right"
                     android:id="@+id/txtRefreshRate"
                     android:padding="3dip" />
+            </TableRow>
+            <TableRow android:background="@color/white"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_column="1"
+                    android:text=""
+                    android:padding="3dip"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
             </TableRow>
         </TableLayout>
     </ScrollView>

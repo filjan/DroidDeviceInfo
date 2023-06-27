@@ -1,20 +1,16 @@
 package com.swiftsoftbd.app.droidinfo;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.swiftsoftbd.app.droidinfo.adapter.ItemListBaseAdapter;
 import com.swiftsoftbd.app.droidinfo.data.SharedPref;
 import com.swiftsoftbd.app.droidinfo.tools.LoaderData;
-
-import java.io.IOException;
 
 /**
  * A dummy fragment representing a section of the app, but that simply displays dummy text.

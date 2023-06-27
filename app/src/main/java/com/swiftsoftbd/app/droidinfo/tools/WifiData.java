@@ -1,15 +1,21 @@
 package com.swiftsoftbd.app.droidinfo.tools;
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.net.TrafficStats;
 import android.net.wifi.ScanResult;
+import android.os.Build;
+import android.provider.Settings;
 
+import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
+import java.net.InterfaceAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -46,7 +52,7 @@ public class WifiData {
     {
         String linkSpeed = "";
 
-        final WifiManager wifiManager =(WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+        final WifiManager wifiManager =(WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         if (wifiManager != null) {
             final WifiInfo wifiInfo = wifiManager.getConnectionInfo();
@@ -61,7 +67,7 @@ public class WifiData {
     {
         String ssid = "";
 
-        final WifiManager wifiManager =(WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+        final WifiManager wifiManager =(WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         if (wifiManager != null) {
             final WifiInfo wifiInfo = wifiManager.getConnectionInfo();
@@ -76,7 +82,7 @@ public class WifiData {
     {
         String bssid = "";
 
-        final WifiManager wifiManager =(WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+        final WifiManager wifiManager =(WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         if (wifiManager != null) {
             final WifiInfo wifiInfo = wifiManager.getConnectionInfo();
@@ -84,6 +90,11 @@ public class WifiData {
                 bssid = wifiInfo.getBSSID();
             }
         }
+
+       // int test = 0;
+       // if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+       //     test = context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+       // }
 
         return bssid;
     }
@@ -109,7 +120,7 @@ public class WifiData {
 
     public static String GetIPv6(Context context)
     {
-        final WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        final WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         final ByteBuffer byteBuffer = ByteBuffer.allocate(4);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
         byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
@@ -175,26 +186,31 @@ public class WifiData {
     {
         String subnet = "";
 
-        final WifiManager wifiManager =(WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+        final WifiManager wifiManager =(WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         if (wifiManager != null) {
 
             DhcpInfo d=wifiManager.getDhcpInfo();
 
-            /* String s_dns1="DNS 1: "+String.valueOf(d.dns1);
-            String s_dns2="DNS 2: "+String.valueOf(d.dns2);
-            String s_gateway="Default Gateway: "+String.valueOf(d.gateway);
-            String s_ipAddress="IP Address: "+String.valueOf(d.ipAddress);
-            String s_leaseDuration="Lease Time: "+String.valueOf(d.leaseDuration);
-            String s_netmask="Subnet Mask: "+String.valueOf(d.netmask);
-            String s_serverAddress="Server IP: "+String.valueOf(d.serverAddress); */
+            //  wifii= (WifiManager)
+            context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+            WifiInfo wifiInfo;
+            wifiInfo = wifiManager.getConnectionInfo();
 
-            subnet = String.valueOf(d.netmask);
+            DhcpInfo dhcp = wifiManager.getDhcpInfo();
+            subnet = intToIP(dhcp.netmask);
         }
 
         return subnet;
     }
 
-    public static String getMacAddr() {
+    private static String intToIP(int ipAddress) {
+        String ret = String.format("%d.%d.%d.%d", (ipAddress & 0xff),
+                (ipAddress >> 8 & 0xff), (ipAddress >> 16 & 0xff),
+                (ipAddress >> 24 & 0xff));
+        return ret;
+    }
+
+    private static String getMacAddr() {
         String returnValue = "";
 
         try {
@@ -241,13 +257,15 @@ public class WifiData {
                 return res1.toString();
             }
         } catch (Exception ex) {
+            return "02:00:00:00:00:00";
         }
         return "02:00:00:00:00:00";
     }
 
-    public static Enumeration<InetAddress> getWifiInetAddresses(final Context context) {
-        final WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+    private static Enumeration<InetAddress> getWifiInetAddresses(final Context context) {
+        final WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         final WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+
         final String macAddress = wifiInfo.getMacAddress();
         final String[] macParts = macAddress.split(":");
         final byte[] macBytes = new byte[macParts.length];
@@ -318,13 +336,38 @@ public class WifiData {
 
     public static String GetFrequency(final Context context)
     {
-        final WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        String frequency = "";
+        final WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-        //int frequency = wifiInfo.getFrequency();
-        int frequency = 0;
-        return Integer.toString(frequency);
+        if (wifiInfo != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                frequency = wifiInfo.getFrequency() + " " + WifiInfo.FREQUENCY_UNITS;
+            }
+        }
+
+        return frequency;
     }
+    public static String GetWifiChannel(final Context context)
+    {
+        final WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+
+        int freq = 0;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            freq = wifiInfo.getFrequency();
+        }
+
+        if (freq >= 2412 && freq <= 2484) {
+            return ((freq - 2412) / 5 + 1) + "";
+        } else if (freq >= 5170 && freq <= 5825) {
+            return ((freq - 5170) / 5 + 34) + "";
+        } else {
+            return -1 + "";
+        }
+    }
+
     //@Override
     //public void onRequestPermissionsResult(int requestCode, String[] permissions,
     //                                       int[] grantResults) {

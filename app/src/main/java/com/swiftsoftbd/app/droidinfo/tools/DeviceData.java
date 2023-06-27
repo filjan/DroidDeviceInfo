@@ -39,18 +39,23 @@ public class DeviceData {
         return Build.SERIAL;
     }
 
-    public String GetRadio()
-    {
-        String radioVersion = Build.getRadioVersion();
+    public String GetRadio() {
+        String radioVersion = "";
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+                radioVersion = Build.getRadioVersion();
+                if (radioVersion.isEmpty()) {
+                    radioVersion = "Unavailable";
+                }
+            } else {
+                radioVersion = "Unavailable";
+            }
+        } catch (Exception ex) {
+            radioVersion = "Unavailable";
+        }
 
-        if (radioVersion.isEmpty())
-        {
-            return "Unavailable";
-        }
-        else
-        {
-            return radioVersion;
-        }
+
+        return radioVersion;
     }
 
     public String GetTotalRAM()

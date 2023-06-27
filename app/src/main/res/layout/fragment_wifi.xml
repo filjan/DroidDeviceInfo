@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollWIFI"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
     <TableLayout
+        android:id="@+id/table_wifi"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="1">
-        <TableRow android:background="@color/soft_grey2">
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:layout_marginRight="5dp"
+        android:background="@color/soft_grey2">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Enabled:"
@@ -20,49 +25,24 @@
                 android:id="@+id/txtWifiEnabled"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@android:color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Data State:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:id="@+id/txtDataState"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey2">
-            <TextView
-                android:layout_column="1"
-                android:text="Handshake State:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:id="@+id/txtHandshakeState"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@android:color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="SSID:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:id="@+id/txtSSID"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey2">
+ <!--       <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="BSSID:"
+                android:padding="3dip" />
+            <Button
+                android:visibility="gone"
+                android:id="@+id/lnkBSSID"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Click To Grant Permission"
+                android:background="@color/soft_grey2"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:onClick="onClickBSSID"
                 android:padding="3dip" />
             <TextView
                 android:text=""
@@ -71,21 +51,9 @@
                 android:gravity="right"
                 android:id="@+id/txtBSSID"
                 android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@android:color/white">
-            <TextView
-                android:layout_column="1"
-                android:text="Vendor:"
-                android:padding="3dip" />
-            <TextView
-                android:text=""
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:id="@+id/txtVendor"
-                android:padding="3dip" />
-        </TableRow>
-        <TableRow android:background="@color/soft_grey">
+        </TableRow> -->
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Frequency:"
@@ -98,7 +66,8 @@
                 android:id="@+id/txtFrequency"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/white">
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Channel:"
@@ -111,7 +80,8 @@
                 android:id="@+id/txtChannel"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="IP Address:"
@@ -124,7 +94,8 @@
                 android:id="@+id/txtIPAddress"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/white">
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Subnet Mask:"
@@ -137,7 +108,8 @@
                 android:id="@+id/txtSubnetMask"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="IPv6 Address:"
@@ -150,7 +122,8 @@
                 android:id="@+id/txtIPv6Address"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/white">
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="MAC:"
@@ -163,7 +136,8 @@
                 android:id="@+id/txtMAC"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Speed:"
@@ -176,7 +150,8 @@
                 android:id="@+id/txtSpeed"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/white">
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Signal Strength:"
@@ -189,7 +164,8 @@
                 android:id="@+id/txtSignalStrength"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/soft_grey">
+        <TableRow android:background="@color/soft_grey2"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Received Since Reboot:"
@@ -202,7 +178,8 @@
                 android:id="@+id/txtReceivedSinceReboot"
                 android:padding="3dip" />
         </TableRow>
-        <TableRow android:background="@color/white">
+        <TableRow android:background="@color/white"
+            android:layout_marginBottom="1dp">
             <TextView
                 android:layout_column="1"
                 android:text="Sent Since Reboot:"
@@ -215,5 +192,15 @@
                 android:id="@+id/txtSentSinceReboot"
                 android:padding="3dip" />
         </TableRow>
+        <TableRow android:background="@color/white"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_column="1"
+                android:text=""
+                android:padding="3dip"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
     </TableLayout>
-</LinearLayout>
+</ScrollView>

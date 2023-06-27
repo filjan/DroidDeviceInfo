@@ -20,21 +20,35 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.material.snackbar.Snackbar;
 import com.swiftsoftbd.app.droidinfo.adapter.PagerAdapter;
 import com.swiftsoftbd.app.droidinfo.tools.LoaderData;
+
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.CAMERA;
+
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+import com.microsoft.appcenter.distribute.Distribute;
 
 public class ActivityMain extends FragmentActivity implements ActionBar.TabListener {
 
@@ -43,14 +57,19 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
 
     private String[] tabTitle;
     //for ads
-  	private InterstitialAd mInterstitialAd;
     ViewPager mViewPager;
     ActionBar actionBar;
+    private static final int PERMISSION_REQUEST_CODE = 200;
+    private View view;
+    Context context;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_main);
+
+        AppCenter.start(getApplication(), "47387cec-c3b9-400e-a6b3-8494aff416a8",
+                Analytics.class, Crashes.class);
 
         // Create the InterstitialAd and set the adUnitId.
         //mInterstitialAd = new InterstitialAd(this);
@@ -67,15 +86,16 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
 
         // Set up the action bar.
         actionBar = getActionBar();
+        assert actionBar != null;
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         //AdView mAdView = (AdView) rootView.findViewById(R.id.ad_view_all);
-        AdView adView = (AdView) findViewById(R.id.ad_view_all);
-        AdRequest adRequestBanner = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        //AdView adView = (AdView) findViewById(R.id.ad_view_all);
+        //AdRequest adRequestBanner = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         // Start loading the ad in the background.
         try
         {
-            adView.loadAd(adRequestBanner);
+            //adView.loadAd(adRequestBanner);
 
         } catch ( Exception ex ) {
             ex.printStackTrace();
@@ -83,7 +103,9 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         defineTabAnpageView();
-        
+
+        context = this.getApplicationContext();
+
     }
     
     public void defineTabAnpageView(){
@@ -138,13 +160,11 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.refresh:
-            	new LoaderInfo(this).execute("");
+        if (item.getItemId() == R.id.refresh) {
+            new LoaderInfo(this).execute("");
             return true;
-            default:
-                return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 	
     
@@ -153,7 +173,7 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
     	LoaderData cpu = null;
     	String status = "failed";
     	Context context;
-    	public LoaderInfo(Activity act){
+    	private LoaderInfo(Activity act){
     		context=act;
     		cpu = new LoaderData(act);
     		menu.getItem(0).setVisible(false);
@@ -198,9 +218,9 @@ public class ActivityMain extends FragmentActivity implements ActionBar.TabListe
 	  */
 	public void showInterstitial() {
 		// Show the ad if it's ready
-		if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
-			mInterstitialAd.show();
-		}
+		//if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+		//	mInterstitialAd.show();
+		//}
 	}
 
 

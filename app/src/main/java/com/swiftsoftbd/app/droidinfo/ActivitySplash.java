@@ -1,9 +1,11 @@
 package com.swiftsoftbd.app.droidinfo;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -11,13 +13,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.swiftsoftbd.app.droidinfo.tools.LoaderData;
+import com.swiftsoftbd.app.droidinfo.tools.WifiData;
+
+import java.util.Objects;
 
 public class ActivitySplash extends Activity {
 
 	LoaderData cpu = null;
 	LinearLayout lyt_progress;
 	TextView tv_message;
-	
+	private final Handler mHandler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +34,8 @@ public class ActivitySplash extends Activity {
      	setContentView(R.layout.activity_splash);
      	tv_message	 =	(TextView) findViewById(R.id.tv_message);
      	lyt_progress = 	(LinearLayout) findViewById(R.id.lyt_progress);
-     	cpu = new LoaderData(this);
+
+		cpu = new LoaderData(this);
      	
      	new LoaderInfo().execute("");
     }
@@ -43,29 +50,29 @@ public class ActivitySplash extends Activity {
 		protected String doInBackground(String... params) {
 			try {
 				
-				publishProgress("load cpu info");
-				Thread.sleep(300);
-				cpu.loadCpuInfo();
+				publishProgress("Loading information...");
+				Thread.sleep(1000);
+				//cpu.loadCpuInfo();
 				
-				publishProgress("load battery info");
-				Thread.sleep(300);
-		     	cpu.loadBateryInfo();
+				//publishProgress("load battery info");
+				//Thread.sleep(300);
+		     	//cpu.loadBateryInfo();
 		     	
-		     	publishProgress("load device info");
-		     	Thread.sleep(300);
-		     	cpu.loadDeviceInfo();
+		     	//publishProgress("load device info");
+		     	//Thread.sleep(300);
+		     	//cpu.loadDeviceInfo();
 		     	
-		     	publishProgress("load system info");
-		     	Thread.sleep(300);
-		     	cpu.loadSystemInfo();
+		     	//publishProgress("load system info");
+		     	//Thread.sleep(300);
+		     	//cpu.loadSystemInfo();
 
-				publishProgress("load wifi info");
-				Thread.sleep(300);
-				cpu.loadWifiInfo();
+				//publishProgress("load wifi info");
+				//Thread.sleep(300);
+				//cpu.loadWifiInfo();
 
-		     	publishProgress("load sensor info");
-		     	Thread.sleep(300);
-		     	cpu.loadSupportInfo();
+		     	//publishProgress("load sensor info");
+		     	//Thread.sleep(300);
+		     	//cpu.loadSupportInfo();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

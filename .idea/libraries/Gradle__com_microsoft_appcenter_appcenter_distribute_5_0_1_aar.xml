@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.microsoft.appcenter:appcenter-distribute:5.0.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7b31af49cab4b31b28f88bb90525871d/transformed/jetified-appcenter-distribute-5.0.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7b31af49cab4b31b28f88bb90525871d/transformed/jetified-appcenter-distribute-5.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7b31af49cab4b31b28f88bb90525871d/transformed/jetified-appcenter-distribute-5.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7b31af49cab4b31b28f88bb90525871d/transformed/jetified-appcenter-distribute-5.0.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter-distribute/5.0.1/9d20f77875051d3b82ff066aae410f1ed92a44a9/appcenter-distribute-5.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter-distribute/5.0.1/492b373a8787b8ac3d9e148d76c12bb6531c054d/appcenter-distribute-5.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

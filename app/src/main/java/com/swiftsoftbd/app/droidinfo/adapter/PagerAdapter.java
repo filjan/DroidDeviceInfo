@@ -1,13 +1,15 @@
 package com.swiftsoftbd.app.droidinfo.adapter;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.swiftsoftbd.app.droidinfo.PageAbout;
 import com.swiftsoftbd.app.droidinfo.PageAllFragment;
+import com.swiftsoftbd.app.droidinfo.PageBattery;
 import com.swiftsoftbd.app.droidinfo.PageCPU;
+import com.swiftsoftbd.app.droidinfo.PageSystem;
 import com.swiftsoftbd.app.droidinfo.PageWifi;
 import com.swiftsoftbd.app.droidinfo.PageDevice;
 
@@ -40,6 +42,14 @@ public class PagerAdapter extends FragmentPagerAdapter {
         }
         else if (i == 1) {
     	    return new PageDevice();
+        }
+        else if (i == 2) {
+            return new PageSystem();
+        }
+        else if (i == 3)
+        {
+            return new PageBattery();
+
         }
         else if (i == 4) {
     	    return new PageWifi();

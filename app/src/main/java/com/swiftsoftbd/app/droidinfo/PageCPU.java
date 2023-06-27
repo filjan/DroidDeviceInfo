@@ -3,25 +3,26 @@ package com.swiftsoftbd.app.droidinfo;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.swiftsoftbd.app.droidinfo.tools.CPUData;
+import com.swiftsoftbd.app.droidinfo.tools.DroidValuePair;
 
-import java.util.Map;
+import java.util.Objects;
 
 public class PageCPU extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cpu, container, false);
-        Context context = getActivity().getApplicationContext();
+        Context context = Objects.requireNonNull(getActivity()).getApplicationContext();
 
         ScrollView scrollView = rootView.findViewById(R.id.scrollCPU);
 
@@ -30,9 +31,14 @@ public class PageCPU extends Fragment {
          CPUData cpu = new CPUData();
 
          cpu.GetProcessorInfo();
+        //cpu.getCpuinfo();
+        //cpu.loadCpuInfo();
 
-        TextView txtProcessorName = (TextView) rootView.findViewById(R.id.txtProcessorName);
-        txtProcessorName.setText(cpu.GetProcessorName(context));
+        TextView txtProcessorMfg = (TextView) rootView.findViewById(R.id.txtProcessorMfg);
+        txtProcessorMfg.setText(cpu.GetProcessorMfg(context));
+
+        TextView txtProcessorModel = (TextView) rootView.findViewById(R.id.txtProcessorModel);
+        txtProcessorModel.setText(cpu.GetProcessorModel(context));
 
         TextView txtArchitecture = (TextView) rootView.findViewById(R.id.txtArchitecture);
         txtArchitecture.setText(cpu.GetArchitecture());
@@ -55,7 +61,8 @@ public class PageCPU extends Fragment {
         //view.setPadding(0,paddingPixel,0,0);
 
         int counter = 1;
-        for (Map.Entry<String, String> entry : cpu.processorMap.entrySet()) {
+//        for (Map.Entry<String, String> entry : cpu.processorMap.entrySet()) {
+        for (DroidValuePair pair : cpu.processorInfo) {
 
             //for (Map.Entry<String, String> entry : cpu.processorMap.entrySet())
             //{
@@ -88,24 +95,24 @@ public class PageCPU extends Fragment {
             TextView leftView = new TextView(context);
             leftView.setLayoutParams(new TableRow.LayoutParams(1));
             leftView.setTextColor(getResources().getColor(android.R.color.black));
-            leftView.setGravity(Gravity.LEFT);
+            leftView.setGravity(Gravity.START);
             leftView.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
-            leftView.setText(entry.getKey());
+            leftView.setText(pair.getFirstValue());
 
 
             TextView rightView = new TextView(context);
+           // rightView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             rightView.setLayoutParams(new TableRow.LayoutParams(2));
             rightView.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1f));
             rightView.setTextColor(getResources().getColor(android.R.color.black));
             rightView.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
-            rightView.setGravity(Gravity.RIGHT);
-            rightView.setText(entry.getValue());
+            rightView.setGravity(Gravity.END);
+            rightView.setText(pair.getSecondValue());
 
             tableRow.addView(leftView);
             tableRow.addView(rightView);
             tableLayout.addView(tableRow);
         }
-//        linearLayout.addView(tableLayout);
         return rootView;
     }
 }
